@@ -1,0 +1,16 @@
+// Helper method to generate test temperatures
+    private List<Temperature> generateTestTemperatures() {
+        List<Temperature> temps = new ArrayList<>();
+        // Add 8-10 objects for testing
+        temps.add(new Temperature("City1", "State1", 20, 30));
+        temps.add(new Temperature("City2", "State2", 25, 35));
+        temps.add(new Temperature("City3", "State3", 18, 28));
+        temps.add(new Temperature("City4", "State4", 22, 32));
+        temps.add(new Temperature("City5", "State5", 15, 25));
+        temps.add(new Temperature("City6", "State6", 28, 38));
+        temps.add(new Temperature("City7", "State7", 19, 29));
+        temps.add(new Temperature("City8", "State8", 23, 33));
+        temps.add(new Temperature("City9", "State9", 26, 36));
+        temps.add(new Temperature("City10", "State10", 17, 27));
+        return temps;
+    }
