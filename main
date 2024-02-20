@@ -1,0 +1,48 @@
+public static void main(String[] args) {
+            try {
+                // Create a WeatherReport object with data from the file
+                WeatherReport report = new WeatherReport("weather.txt");
+
+                // Test and time sorting by city using Collections.sort()
+                long startTimeCollectionsCity = System.nanoTime();
+                if (!report.isSortedByCity()) {
+                    report.sortWithCollections("City");
+                }
+                long endTimeCollectionsCity = System.nanoTime();
+                System.out.println("Time taken to sort by city with Collections.sort(): "
+                        + (endTimeCollectionsCity - startTimeCollectionsCity) + " ns");
+
+                // Test and time sorting by high temperature using Collections.sort()
+                long startTimeCollectionsHigh = System.nanoTime();
+                if (!report.isSortedByHigh()) {
+                    report.sortWithCollections("High");
+                }
+                long endTimeCollectionsHigh = System.nanoTime();
+                System.out.println("Time taken to sort by high temperature with Collections.sort(): "
+                        + (endTimeCollectionsHigh - startTimeCollectionsHigh) + " ns");
+
+                // Create a new WeatherReport object for testing merge sort
+                WeatherReport mergeSortReport = new WeatherReport("weather.txt");
+
+                // Test and time sorting by city using merge sort
+                long startTimeMergeSortCity = System.nanoTime();
+                if (!mergeSortReport.isSortedByCity()) {
+                    mergeSortReport.sortWithMerge("City");
+                }
+                long endTimeMergeSortCity = System.nanoTime();
+                System.out.println("Time taken to sort by city with merge sort: "
+                        + (endTimeMergeSortCity - startTimeMergeSortCity) + " ns");
+
+                // Test and time sorting by high temperature using merge sort
+                long startTimeMergeSortHigh = System.nanoTime();
+                if (!mergeSortReport.isSortedByHigh()) {
+                    mergeSortReport.sortWithMerge("High");
+                }
+                long endTimeMergeSortHigh = System.nanoTime();
+                System.out.println("Time taken to sort by high temperature with merge sort: "
+                        + (endTimeMergeSortHigh - startTimeMergeSortHigh) + " ns");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
