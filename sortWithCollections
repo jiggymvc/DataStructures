@@ -1,0 +1,12 @@
+public void sortWithCollections(String by) {
+        switch (by) {
+            case "City":
+                Collections.sort(temperatures, Comparator.comparing(Temperature::getCity));
+                break;
+            case "High":
+                Collections.sort(temperatures, Comparator.comparingInt(Temperature::getHighTemperature));
+                break;
+            default:
+                System.out.println("Invalid sorting criteria. Supported values are 'City' and 'High'.");
+        }
+    }
