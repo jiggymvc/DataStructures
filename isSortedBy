@@ -1,0 +1,23 @@
+public boolean isSortedByCity() {
+        for (int i = 0; i < temperatures.size() - 1; i++) {
+            String currentCity = temperatures.get(i).getCity();
+            String nextCity = temperatures.get(i + 1).getCity();
+
+            if (currentCity.compareTo(nextCity) > 0) {
+                return false; // Not sorted by city
+            }
+        }
+        return true; // Sorted by city
+    }
+
+    public boolean isSortedByHigh() {
+        for (int i = 0; i < temperatures.size() - 1; i++) {
+            int currentHigh = temperatures.get(i).getHighTemperature();
+            int nextHigh = temperatures.get(i + 1).getHighTemperature();
+
+            if (currentHigh > nextHigh) {
+                return false; // Not sorted by high temperature
+            }
+        }
+        return true; // Sorted by high temperature
+    }
